@@ -1,0 +1,24 @@
+<div>
+  <div>
+  <% if flash[:alert] %>
+    <p id="notice"><%= flash[:alert] %></p>
+  </div>
+  <% end %>
+  
+  <h1>Cousette Payment Tracker</h1>
+  <h2>Log-In:</h2>
+  <div>
+    <%= form_for(:session, url: login_path) do |f| %>
+    <div>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
+    <div>
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+    </div>  
+      <%= f.submit "Log In" %>
+      <p>New User? <%= link_to "Sign Up Now", new_user_path  %></p>
+    <% end %>
+  </div>
+</div>
